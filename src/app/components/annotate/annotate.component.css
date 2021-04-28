@@ -1,0 +1,17 @@
+img{
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  top: 0;
+}
+
+.rectangle{
+  height: 100px;
+  width: 100px;
+  border-color: red;
+  border-style: solid;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+
+}

@@ -1,0 +1,6 @@
+<p>image-list works!</p>
+<input type="file" accept="image/*" multiple (change)="detectFiles($event)">
+
+<div class="ImagesList" *ngFor="let url of urls" >
+    <img class="imagepreview" (click)="newMessage(url)" [src]="url" >
+</div>
