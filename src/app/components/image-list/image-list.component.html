@@ -1,6 +1,6 @@
-<p>image-list works!</p>
 <input type="file" accept="image/*" multiple (change)="detectFiles($event)">
-
-<div class="ImagesList" *ngFor="let url of urls" >
-    <img class="imagepreview" (click)="newMessage(url)" [src]="url" >
-</div>
+<mat-grid-list class="gridList" cols="2" rowHeight="2:1">
+  <mat-grid-tile *ngFor="let image of images">
+    <img class="tile-image" (click)="newMessage(image)" [src]="image.scr" >
+  </mat-grid-tile>
+</mat-grid-list>

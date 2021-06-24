@@ -1,1 +1,7 @@
-<p>label works!</p>
+<app-label-form></app-label-form>
+<mat-selection-list #label [multiple]="false">
+  <mat-list-option *ngFor="let label of labels" [value]="label" (click)="onSelect(label)">
+    {{label}}
+  </mat-list-option>
+</mat-selection-list>
+

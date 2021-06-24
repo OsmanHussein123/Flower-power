@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LabelingService} from '../../services/labeling.service';
 
 @Component({
   selector: 'app-label',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LabelComponent implements OnInit {
 
-  constructor() { }
+
+  labels: [] = this.lab.labels;
+
+  constructor(private lab: LabelingService) { }
 
   ngOnInit(): void {
+  }
+
+  onSelect(label): void{
+    this.lab.label = label;
   }
 
 }

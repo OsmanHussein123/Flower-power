@@ -1,2 +1,9 @@
-<img class="imagepreview" [src]="message" (click)="onClick($event)" >
-<div [ngStyle]="{'top': rectTop, 'right': rectRight, 'visibility' : rectVisibility}" class="rectangle"></div>
+
+<div class="boundary">
+  <img id="imagepreview" [src]="this.image.scr" (click)="onClick($event)" >
+  <div *ngFor="let ann of this.image.annotations" class="rectangles">
+    <div  [ngStyle]="{'top': ann.top, 'left': ann.left}" class="rectangle" cdkDragBoundary=".boundary" cdkDrag>{{ann.label}}</div>
+  </div>
+
+</div>
+

@@ -1,5 +1,11 @@
 <router-outlet></router-outlet>
 
+<div class="topnav">
+  <a class="active" >Annotation tool</a>
+  <a (click)="getAnnotations()">Import Annotations</a>
+  <a >Export Annotations</a>
+</div>
+
 <div class="container">
   <app-image-list></app-image-list>
   <app-annotate></app-annotate>
