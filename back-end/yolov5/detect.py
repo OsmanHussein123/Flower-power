@@ -7,6 +7,8 @@ Usage:
 import argparse
 import sys
 import time
+import os
+import glob
 from pathlib import Path
 
 import cv2
@@ -54,7 +56,7 @@ def run(weights='yolov5s.pt',  # model.pt path(s)
         ('rtsp://', 'rtmp://', 'http://', 'https://'))
 
     # Directories
-    save_dir = increment_path(Path(project) / name, exist_ok=exist_ok)  # increment run
+    save_dir = Path(project) / name  # increment run
     (save_dir / 'labels' if save_txt else save_dir).mkdir(parents=True, exist_ok=True)  # make dir
 
     # Initialize
@@ -200,8 +202,8 @@ def parse_opt():
     parser.add_argument('--agnostic-nms', action='store_true', help='class-agnostic NMS')
     parser.add_argument('--augment', action='store_true', help='augmented inference')
     parser.add_argument('--update', action='store_true', help='update all models')
-    parser.add_argument('--project', default='runs/detect', help='save results to project/name')
-    parser.add_argument('--name', default='exp', help='save results to project/name')
+    parser.add_argument('--project', default='inference', help='save results to project/name')
+    parser.add_argument('--name', default='output', help='save results to project/name')
     parser.add_argument('--exist-ok', action='store_true', help='existing project/name ok, do not increment')
     parser.add_argument('--line-thickness', default=3, type=int, help='bounding box thickness (pixels)')
     parser.add_argument('--hide-labels', default=False, action='store_true', help='hide labels')
