@@ -48,7 +48,7 @@ def upload_file():
       errors[file.filename] = 'File type is not allowed'
 
   if success and errors:
-    errors['message'] = 'File(s) successfully uploaded'
+    errors['message'] = 'File(s) success fully uploaded'
     resp = jsonify(errors)
     resp.status_code = 500
     return resp
